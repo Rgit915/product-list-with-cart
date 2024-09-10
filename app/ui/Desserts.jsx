@@ -3,7 +3,7 @@ import Image from "next/image";
 import images from "../lib/data.json";
 
 export default function DessertPage() {
-  
+
   return (
     <section className="dessert-page ">
       <div className="heading my-4">
@@ -57,8 +57,8 @@ export default function DessertPage() {
               className="rounded-xl object-cover w-full h-auto"
             /> */}
             </div>
-            <div className="button-container w-[160x] h-[44px] absolute top-[60%] left-[20%]  flex justify-center space-x-6 ">
-              <button className=" button rounded-3xl border-2 border-rose-400 px-4 py-2 bg-white flex justify-between items-center gap-4">
+            <div className="button-container">
+              <button className="relative button rounded-3xl border-2 border-rose-400 px-4 py-2 bg-white flex justify-between items-center gap-4 cursor-pointer left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 <Image
                   src="/assets/images/icon-add-to-cart.svg"
                   alt="image cart icon"
