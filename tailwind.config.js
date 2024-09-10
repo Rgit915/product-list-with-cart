@@ -1,3 +1,5 @@
+const { Red_Hat_Text } = require('next/font/google');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -18,7 +20,7 @@ module.exports = {
         "rose-900": "hsl(14, 65%, 9%)",
       },
       fontFamily: {
-        sans: ['Red Hat Text', 'sans-serif'],
+        Red_Hat_Text: ['Red Hat Text', 'sans-serif'],
       },
     },
   },
