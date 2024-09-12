@@ -14,8 +14,15 @@ export function CartProvider({ children }) {
     setCartItems((prevItems) => [...prevItems, item]);
   };
 
+  // Function to remove items from cart
+  const removeFromCart = (itemName) => {
+    setCartItems((prevItems) =>
+      prevItems.filter((item) => item.name !== itemName)
+    );
+  };
+
   return (
-    <CartContext.Provider value={{ cartItems, addToCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
       {children}
     </CartContext.Provider>
   );
