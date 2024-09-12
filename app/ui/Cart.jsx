@@ -8,8 +8,8 @@ export default function Cart() {
 const { cartItems } = useCart();
 
   return (
-    <section className="cart-page">
-      <div className="bg-white rounded-lg p-4 w-full">
+    <section className="cart-page lg:w-1/3 lg:m-8">
+      <div className="bg-white rounded-lg p-4 w-full lg:py-8">
         <h2 className="text-3xl font-bold text-red">Your Cart ({cartItems.length}) </h2>
         {cartItems.length === 0 ?(
           <div className="flex flex-col items-center justify-between gap-4">
