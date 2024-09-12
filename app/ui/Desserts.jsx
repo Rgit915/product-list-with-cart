@@ -1,9 +1,11 @@
+"use client"
+import { useCart } from "../lib/context/CartContext";
 import Image from "next/image";
 
 import images from "../lib/data.json";
 
 export default function DessertPage() {
-
+  const { addToCart } = useCart();
   return (
     <section className="dessert-page ">
       <div className="heading my-4">
@@ -19,24 +21,14 @@ export default function DessertPage() {
                 <source
                   media="(min-width: 1024px)"
                   srcSet={item.image.desktop}
-
                 />
-                <source
-                  media="(min-width: 768px)"
-                  srcSet={item.image.tablet}
-
-                />
-                <source
-                  media="(max-width: 767px)"
-                  srcSet={item.image.mobile}
-
-                />
+                <source media="(min-width: 768px)" srcSet={item.image.tablet} />
+                <source media="(max-width: 767px)" srcSet={item.image.mobile} />
                 <Image
                   src={item.image.thumbnail}
                   alt={`${item.name} image`}
                   width={250}
                   height={240}
-
                   className="rounded-xl object-cover w-full h-auto"
                 />
               </picture>
@@ -58,7 +50,12 @@ export default function DessertPage() {
             /> */}
             </div>
             <div className="button-container">
-              <button className="relative button rounded-3xl border-2 border-rose-400 px-4 py-2 bg-white flex justify-between items-center gap-4 cursor-pointer left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <button
+                className="relative button rounded-3xl border-2 border-rose-400 px-4 py-2 bg-white flex justify-between items-center gap-4 cursor-pointer left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 "
+                onClick={() =>
+                  addToCart({ name: item.name, price: item.price })
+                } // Add item to cart
+              >
                 <Image
                   src="/assets/images/icon-add-to-cart.svg"
                   alt="image cart icon"
@@ -69,7 +66,7 @@ export default function DessertPage() {
                 Add to Cart
               </button>
             </div>
-            <div className="dessert-details my-8">
+            <div className="dessert-details my-4">
               <span className="dessert-category text-rose-500 font-normal leading-4 ">
                 {item.category}
               </span>
