@@ -1,15 +1,15 @@
 import { useCart } from "../lib/context/CartContext"; // Import the Cart Context
 import Image from "next/image";
+import OrderTotal from "./OrderTotal";
+import { useState } from "react";
+import OrderModal from "./OrderModal";
 
 const CartItemList = () => {
   const { cartItems, removeFromCart } = useCart();
 
-  // Calculate the order total
-  const orderTotal = cartItems.reduce(
-    (total, item) => total + item.price * item.quantity,
-    0
-  );
-  
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleOpenModal = () => setIsModalOpen(true);
+
   return (
     <div className="cart-items-list">
       <ul className="cart-items list-none">
@@ -38,7 +38,7 @@ const CartItemList = () => {
                   alt="remove button Icon"
                   width={17.5}
                   height={17.5}
-                  className="rounded-full border-2 border-rose-400 px-1 py-1"
+                  className="rounded-full border-2 border-rose-400 px-1 py-1 hover:border-rose-900 hover:text-rose-900"
                   style={{ width: "auto", height: "auto" }}
                 />
               </button>
@@ -47,12 +47,7 @@ const CartItemList = () => {
           </li>
         ))}
       </ul>
-      <div className="flex justify-between w-full py-4 text-sm leading-[18.52px]">
-        <div className="flex justify-between items-center gap-4 w-full">
-          <p className="text-sm text-rose-900 font-normal">Order Total</p>
-          <p className="text-2xl text-rose-900 font-black">${orderTotal.toFixed(2)}</p>
-        </div>
-      </div>
+      <OrderTotal/>
       <div className="carbon-neutral flex justify-between items-center bg-rose-50 rounded-lg px-4 py-4 mb-4 md:justify-center md:gap-2 ">
         <Image
           src="/assets/images/icon-carbon-neutral.svg"
@@ -66,9 +61,13 @@ const CartItemList = () => {
           delivery
         </p>
       </div>
-      <button className="button w-full py-4 text-base font-semibold text-white bg-red rounded-3xl">
+      <button
+      className="button w-full py-4 text-base font-semibold text-white bg-red rounded-3xl hover:bg-rose-800 "
+      onClick={handleOpenModal}
+      >
         Confirm Order
       </button>
+      {isModalOpen && <OrderModal onClose={()=>{setIsModalOpen(false)}} />}
     </div>
   );
 };
