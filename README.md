@@ -32,10 +32,10 @@ Users should be able to:
 
 ### Screenshot
 
-![Age calculator mobile preview](https://github.com/Rgit915/product-list-with-cart/blob/master/public/screenshots/product-list-desktop-order-confirmed-solution.png)
+![Product list desktop order confirmed preview](https://github.com/Rgit915/product-list-with-cart/blob/main/public/screenshots/product-list-desktop-order-confirmed-solution.png)
 
 
-![Age calculator Invalid error preview](https://github.com/Rgit915/product-list-with-cart/blob/master/public/screenshots/product-list-tablet-preview-solution.png)
+![Product list tablet preview](https://github.com/Rgit915/product-list-with-cart/blob/main/public/screenshots/product-list-tablet-preview-solution.png)
 
 
 
