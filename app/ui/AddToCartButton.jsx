@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useMemo } from "react";
 
 const AddToCartButton = ({ item }) => {
-  const { cartItems, addToCart, removeFromCart } = useCart();
+  const { cartItems, addToCart, decrementQuantity } = useCart();
 
   // Calculate the quantity of the item in the cart
   const quantity = useMemo(() => {
@@ -16,7 +16,7 @@ const AddToCartButton = ({ item }) => {
   };
 
   const handleRemove = () => {
-    removeFromCart(item.name); // Remove the item via the context method
+    decrementQuantity(item.name); // Remove the item via the context method
   };
 
   return (

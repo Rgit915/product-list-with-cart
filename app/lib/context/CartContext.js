@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { createContext, useState, useContext } from "react";
 
@@ -30,15 +30,18 @@ export function CartProvider({ children }) {
     });
   };
 
-  // Function to remove or decrement item from the cart
+  // removeFromCart function to remove the item entirely
   const removeFromCart = (itemName) => {
+    setCartItems((prevItems) => prevItems.filter((cartItem) => cartItem.name !== itemName));
+  };
+
+  // Function to remove or decrement item from the cart
+  const decrementQuantity = (itemName) => {
     setCartItems((prevItems) => {
-      const existingItem = prevItems.find(
-        (cartItem) => cartItem.name === itemName
-      );
+      const existingItem = prevItems.find((cartItem) => cartItem.name === itemName);
 
       if (existingItem && existingItem.quantity > 1) {
-        // If the item exists and its quantity is more than 1, decrement the quantity
+        // Decrease the quantity but don't remove the item entirely
         return prevItems.map((cartItem) =>
           cartItem.name === itemName
             ? { ...cartItem, quantity: cartItem.quantity - 1 }
@@ -46,7 +49,7 @@ export function CartProvider({ children }) {
         );
       }
 
-      // If the item's quantity is 1, remove it from the cart
+      // If the quantity is 1, remove the item
       return prevItems.filter((cartItem) => cartItem.name !== itemName);
     });
   };
@@ -57,7 +60,7 @@ export function CartProvider({ children }) {
   };
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, clearCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, clearCart, decrementQuantity }}>
       {children}
     </CartContext.Provider>
   );
