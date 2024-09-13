@@ -32,17 +32,17 @@ Users should be able to:
 
 ### Screenshot
 
-![Product list desktop order confirmed preview](https://github.com/Rgit915/product-list-with-cart/blob/main/public/screenshots/product-list-desktop-order-confirmed-solution.png)
+![Product list desktop order confirmed preview](https://github.com/Rgit915/product-list-with-cart/blob/main/public/screenshots/product-list-desktop-order-confirmed-preview-solution.png)
 
 
-![Product list tablet preview](https://github.com/Rgit915/product-list-with-cart/blob/main/public/screenshots/product-list-tablet-preview-solution.png)
+![Product list tablet preview](https://github.com/Rgit915/product-list-with-cart/blob/main/public/screenshots/product-list-tablet-cart-preview-solution.png)
 
 
 
 ### Links
 
 - Solution URL: [GitHub Repo](https://github.com/Rgit915/product-list-with-cart)
-- Live Site URL: [Live Demo]()
+- Live Site URL: [Live Demo](https://product-list-with-cart-rgit915s-projects.vercel.app/)
 
 ## My process
 
