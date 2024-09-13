@@ -59,7 +59,7 @@ export default function DessertPage() {
                   {item.name}
                 </p>
                 <div className="dessert-price text-red leading-6 font-semibold">
-                  ${item.price}
+                  ${item.price.toFixed(2)}
                 </div>
               </div>
             </div>

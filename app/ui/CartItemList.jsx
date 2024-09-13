@@ -25,7 +25,7 @@ const CartItemList = () => {
                   <span className="item-quantity text-red font-semibold pr-4">
                     {item.quantity}x
                   </span>
-                  @ ${item.price}
+                  @ ${item.price.toFixed(2)}
                   <span className="total-price pl-2">
                     ${(item.price * item.quantity).toFixed(2)}
                   </span>
