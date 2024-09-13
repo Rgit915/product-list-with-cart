@@ -13,8 +13,8 @@ const OrderModal = ({ onClose }) => {
 
   return (
     <div className="order-confirmed"  onClick={handleClose}>
-      <div className="flex flex-col justify-between items-center mt-36 bg-white rounded-t-2xl p-4 md:mt-10 md:rounded-2xl">
-      <div className="">
+      <div className="flex flex-col justify-between items-center mt-36 bg-white rounded-t-2xl p-4 md:mt-10 md:rounded-xl">
+      <div className="p-4 space-y-4">
         <Image
           src="/assets/images/icon-order-confirmed.svg"
           alt="checkmark"
@@ -26,7 +26,7 @@ const OrderModal = ({ onClose }) => {
           we hope you enjoy your food.
         </p>
       </div>
-      <div className="order-list bg-rose-50 p-4 rounded-lg">
+      <div className="order-list bg-rose-50 p-4 rounded-lg w-full">
         <ul className="cart-items list-none">
           {cartItems.map((item, index) => (
             <li
@@ -63,7 +63,7 @@ const OrderModal = ({ onClose }) => {
         <OrderTotal />
       </div>
       <div className="new-order w-full mt-6">
-        <button className="button w-full flex justify-center items-center px-2 py-4 text-base font-semibold text-white bg-red rounded-3xl">
+        <button className="button w-full flex justify-center items-center px-2 py-4 text-base font-semibold text-white bg-red rounded-3xl mb-10">
 
             <span>Start New Order</span>
 
